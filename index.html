@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>badgirilrabia | Fotoğraf Galerisi</title>
+<meta name="description" content="badgirilrabia fotoğraf galerisi. Üç özel fotoğrafı modern ve estetik bir tasarımla keşfet.">
+<meta name="keywords" content="badgirilrabia, fotoğraf galerisi, badgirilrabia fotoğrafları">
+<meta name="author" content="badgirilrabia">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://KULLANICI.github.io/badgirilrabia/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="badgirilrabia | Fotoğraf Galerisi">
+<meta property="og:description" content="Üç özel fotoğraf, tek bir estetik galeri.">
+<meta property="og:url" content="https://KULLANICI.github.io/badgirilrabia/">
+<meta property="og:image" content="https://KULLANICI.github.io/badgirilrabia/images/foto1.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#090611">
+<link rel="stylesheet" href="style.css">
+<script type="application/ld+json">
+{
+ "@context":"https://schema.org",
+ "@type":"WebSite",
+ "name":"badgirilrabia",
+ "url":"https://KULLANICI.github.io/badgirilrabia/",
+ "description":"badgirilrabia fotoğraf galerisi"
+}
+</script>
+</head>
+<body>
+<div class="glow glow-a"></div><div class="glow glow-b"></div>
+<header><a class="brand" href="./">badgirilrabia<span>.</span></a><span class="status"><i></i> PHOTO GALLERY</span></header>
+<main>
+<section class="intro">
+<p class="eyebrow">A LITTLE VISUAL STORY</p>
+<h1>Üç kare.<br><span>Bir atmosfer.</span></h1>
+<p class="sub">Galeriyi keşfet — her fotoğraf kendi hikâyesini anlatsın.</p>
+</section>
+<section class="gallery" aria-label="Üç fotoğraflı galeri">
+<figure class="photo photo-one"><img src="images/foto1.jpg" alt="badgirilrabia fotoğraf 1" loading="eager"><figcaption><span>01</span> FRAME ONE</figcaption></figure>
+<figure class="photo photo-two"><img src="images/foto2.jpg" alt="badgirilrabia fotoğraf 2" loading="lazy"><figcaption><span>02</span> FRAME TWO</figcaption></figure>
+<figure class="photo photo-three"><img src="images/foto3.jpg" alt="badgirilrabia fotoğraf 3" loading="lazy"><figcaption><span>03</span> FRAME THREE</figcaption></figure>
+</section>
+<p class="hint">Fotoğrafa dokunarak büyütebilirsin</p>
+</main>
+<footer><span>© <span id="year"></span> badgirilrabia</span><span>MADE TO BE SEEN ✦</span></footer>
+<div class="viewer" id="viewer" role="dialog" aria-label="Fotoğraf görüntüleyici" aria-modal="true"><button id="close" aria-label="Kapat">×</button><img id="large" alt=""></div>
+<script>
+document.getElementById('year').textContent=new Date().getFullYear();
+const viewer=document.querySelector('#viewer'), large=document.querySelector('#large');
+document.querySelectorAll('.photo img').forEach(img=>img.addEventListener('click',()=>{large.src=img.src;large.alt=img.alt;viewer.classList.add('open')}));
+document.querySelector('#close').addEventListener('click',()=>viewer.classList.remove('open'));
+viewer.addEventListener('click',e=>{if(e.target===viewer)viewer.classList.remove('open')});
+document.addEventListener('keydown',e=>{if(e.key==='Escape')viewer.classList.remove('open')});
+</script>
+</body></html>
